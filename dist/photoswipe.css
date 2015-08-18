@@ -64,7 +64,8 @@
   top: 0;
   width: 100%;
   height: 100%;
-  background: #000;
+  /*background: #000;*/
+  background: #FFFFFF;
   opacity: 0;
   -webkit-backface-visibility: hidden;
   will-change: opacity; }
@@ -150,7 +151,9 @@
 	large image loads on top of it
 */
 .pswp__img--placeholder--blank {
-  background: #222; }
+  /*background: #222; */
+  background: #F0F0EE;
+}
 
 .pswp--ie .pswp__img {
   width: 100% !important;
