@@ -2,7 +2,7 @@ showGallery = function () {
     var pswpElement = document.querySelectorAll('.pswp')[0];
 
     // build items array
-    var items = getPsItems();
+    var items = getPsLargeItems();
 
     // define options (if needed)
     var options = {

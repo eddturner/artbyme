@@ -26,16 +26,19 @@ $i = 0
 #$end = list.photo.size
 $end = 20
 
-items = Array.new
+largeItems = Array.new
+mediumItems = Array.new
 while $i < $end do
    sizes = flickr.photos.getSizes :photo_id => list.photo[$i].id
-#   p sizes
+   #p sizes
    originalInfo = sizes.find {|p| p.label == 'Large'}
-   mediumInfo = sizes.find {|p| p.label == 'Medium'}
+   mediumInfo = sizes.find {|p| p.label == 'Medium 640'}
    
-   photoInfo = { :w => originalInfo.width, :h => originalInfo.height, :src => FlickRaw.url_b(list.photo[$i]) }
-   items.push(photoInfo)
-   
+   largePhotoInfo = { :w => originalInfo.width, :h => originalInfo.height, :src => FlickRaw.url_b(list.photo[$i]) }
+   mediumPhotoInfo = { :w => mediumInfo.width, :h => mediumInfo.height, :src => FlickRaw.url_z(list.photo[$i]) }
+   largeItems.push(largePhotoInfo)
+   mediumItems.push(mediumPhotoInfo)
+
 #   p "Original: width = #{originalInfo.width}, height = #{originalInfo.height}"
 #   p "Medium: width = #{mediumInfo.width}, height = #{mediumInfo.height}"
 #   p "----"
@@ -44,7 +47,8 @@ while $i < $end do
    $i += 1
 end
 
-$psItems = "getPsItems =  function () { return #{JSON.generate(items)}; };"
+$psItems = "getPsLargeItems =  function () { return #{JSON.generate(largeItems)}; };\n"
+$psItems += "getPsMediumItems =  function () { return #{JSON.generate(mediumItems)}; };"
 p "Writing to file: #{$psItems}"
 File.write('../js/psItems.js', $psItems)
 
