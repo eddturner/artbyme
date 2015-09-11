@@ -39,11 +39,6 @@ while $i < $end do
    largeItems.push(largePhotoInfo)
    mediumItems.push(mediumPhotoInfo)
 
-#   p "Original: width = #{originalInfo.width}, height = #{originalInfo.height}"
-#   p "Medium: width = #{mediumInfo.width}, height = #{mediumInfo.height}"
-#   p "----"
-#   p FlickRaw.url_n(list.photo[$i]) 
-#   p FlickRaw.url_b(list.photo[$i]) 
    $i += 1
 end
 

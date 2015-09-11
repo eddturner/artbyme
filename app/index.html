@@ -58,23 +58,26 @@
 
         // All images need to be loaded for this plugin to work so
         // we end up waiting for the whole window to load in this example
-        $(window).load(function () {
-            $(document).ready(function(){
-                collage();
-                $('.Collage').collageCaption();
-            });
-        });
-
+//        $(window).load(function () {
+//            $(document).ready(function(){
+//                collage();
+//                $('.Collage').collageCaption();
+//            });
+//        });
+//        angular.element(document).ready(function(){
+//            collage();
+//            $('.Collage').collageCaption();
+//        });
 
         // Here we apply the actual CollagePlus plugin
-        function collage() {
-            $('.Collage').removeWhitespace().collagePlus(
-                    {
-                        'fadeSpeed'     : 2000,
-                        'targetHeight'  : 300
-                    }
-            );
-        };
+//        function collage() {
+//            $('.Collage').removeWhitespace().collagePlus(
+//                    {
+//                        'fadeSpeed'     : 2000,
+//                        'targetHeight'  : 300
+//                    }
+//            );
+//        };
 
         // This is just for the case that the browser window is resized
         var resizeTimer = null;
