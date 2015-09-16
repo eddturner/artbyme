@@ -34,11 +34,13 @@
     <script type="text/javascript" src="../bower_components/bootstrap/js/collapse.js"></script>
     <script type="text/javascript" src="../bower_components/bootstrap/js/transition.js"></script>
     <script type="text/javascript" src="../bower_components/jquery-collagePlus/jquery.collagePlus.js"></script>
+
     <script type="text/javascript"
             src="../bower_components/jquery-collagePlus/extras/jquery.removeWhitespace.js"></script>
     <script type="text/javascript" src="../bower_components/jquery-collagePlus/extras/jquery.collageCaption.js"></script>
 
     <script type="text/javascript" src="js/ang-ctrls.js"></script>
+    <script type="text/javascript" src="js/ang-dirs.js"></script>
     <script type="text/javascript" src="js/ang-app.js"></script>
     <script type="text/javascript" src="js/ang-routes.js"></script>
 
@@ -53,43 +55,7 @@
     <script src="js/photoswipe-service.js"></script>
     <script src="js/psItems.js"></script>
 
-    <!-- collage-plus initialise -->
-    <script type="text/javascript">
 
-        // All images need to be loaded for this plugin to work so
-        // we end up waiting for the whole window to load in this example
-//        $(window).load(function () {
-//            $(document).ready(function(){
-//                collage();
-//                $('.Collage').collageCaption();
-//            });
-//        });
-//        angular.element(document).ready(function(){
-//            collage();
-//            $('.Collage').collageCaption();
-//        });
-
-        // Here we apply the actual CollagePlus plugin
-//        function collage() {
-//            $('.Collage').removeWhitespace().collagePlus(
-//                    {
-//                        'fadeSpeed'     : 2000,
-//                        'targetHeight'  : 300
-//                    }
-//            );
-//        };
-
-        // This is just for the case that the browser window is resized
-        var resizeTimer = null;
-        $(window).bind('resize', function() {
-            // hide all the images until we resize them
-            $('.Collage .Image_Wrapper').css("opacity", 0);
-            // set a timer to re-apply the plugin
-            if (resizeTimer) clearTimeout(resizeTimer);
-            resizeTimer = setTimeout(collage, 200);
-        });
-
-    </script>
 
 </head>
 

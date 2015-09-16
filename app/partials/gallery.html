@@ -1,9 +1,30 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-12">
-            <div class="Collage effect-parent">
-                <img ng-repeat="i in mediumPictures" ng-src="{{i.src}}" height="{{i.h}}" width="{{i.w}}"/>
-            </div>
+            <img-gallery srcs="mediumPictures"></img-gallery>
         </div>
     </div>
 </div>
+
+<!-- update collage on window size change -->
+<script type="text/javascript">
+
+    // Here we apply the actual CollagePlus plugin
+    function collage() {
+        $('.Collage').removeWhitespace().collagePlus(
+                {
+                    'fadeSpeed'     : 2000,
+                    'targetHeight'  : 300
+                }
+        );
+    };
+    //        // This is just for the case that the browser window is resized
+    var resizeTimer = null;
+    $(window).bind('resize', function() {
+        // hide all the images until we resize them
+        $('.Collage .Image_Wrapper').css("opacity", 0);
+        // set a timer to re-apply the plugin
+        if (resizeTimer) clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(collage, 200);
+    });
+</script>

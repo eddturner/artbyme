@@ -1,4 +1,5 @@
 angular.module('app', [
     'ngRoute',
-    'ctrlsModule'
+    'ctrlsModule',
+    'dirsModule'
 ]);
