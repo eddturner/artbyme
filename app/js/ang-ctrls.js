@@ -1,4 +1,4 @@
-var controllers = angular.module('ctrlsModule', ['akoenig.deckgrid']);
+var controllers = angular.module('ctrlsModule', []);
 
 controllers.controller('HomeCtrl', ['$scope', function($scope) {
     $scope.started = true;
