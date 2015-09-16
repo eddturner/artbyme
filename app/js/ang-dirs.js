@@ -17,7 +17,13 @@ directives.directive('imgGallery', ['$compile', '$timeout', function($compile, $
         scope: {
             srcs: '='
         },
-        template: '<div class="Collage effect-parent"><img ng-repeat="i in srcs" ng-src="{{i.src}}" height="{{i.h}}" width="{{i.w}}"/></div>',
+        controller: function($scope) {
+            $scope.galleryItemClick = function(image) {
+                console.log("Image "+image+" clicked");
+                showGallery(image.id);
+            }
+        },
+        templateUrl: 'templates/collage.html',
         link: function(scope, element, attributes) {
             // on the next digest, redraw the collage
             $timeout(function() {

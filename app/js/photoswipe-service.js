@@ -1,4 +1,4 @@
-showGallery = function () {
+showGallery = function (index) {
     var pswpElement = document.querySelectorAll('.pswp')[0];
 
     // build items array
@@ -6,8 +6,9 @@ showGallery = function () {
 
     // define options (if needed)
     var options = {
+        history: false,
         // optionName: 'option value'
-        index: 0,       // start at first slide
+        index: index,       // start at first slide
         shareEl: false,  // don't want it to be shareable
         shareButtons: [
             //{id:'facebook', label:'Share on Facebook', url:'https://www.facebook.com/sharer/sharer.php?u={{url}}'},
