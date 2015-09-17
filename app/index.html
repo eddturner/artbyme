@@ -36,7 +36,8 @@
 
     <script type="text/javascript"
             src="../.bower_components/jquery-collagePlus/extras/jquery.removeWhitespace.js"></script>
-    <script type="text/javascript" src="../.bower_components/jquery-collagePlus/extras/jquery.collageCaption.js"></script>
+    <script type="text/javascript"
+            src="../.bower_components/jquery-collagePlus/extras/jquery.collageCaption.js"></script>
 
     <script type="text/javascript" src="js/ang-ctrls.js"></script>
     <script type="text/javascript" src="js/ang-dirs.js"></script>
@@ -55,12 +56,11 @@
     <script src="js/psItems.js"></script>
 
 
-
 </head>
 
 <body>
 <!-- Navigation -->
-<nav class="navbar navbar-default navbar-fixed-top">
+<nav class="navbar navbar-default navbar-fixed-top" ng-controller="NavCtrl">
     <div class="container-fluid">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
@@ -75,11 +75,16 @@
 
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="#/">Home</a></li>
-                <li><a href="#/about">About</a></li>
-                <li><a href="#/gallery">Pictures</a></li>
-                <li><a href="#/motivation">Motivation</a></li>
-                <li><a href="#/contact">Contact</a></li>
+                <li ng-class="{active: page=='home'}"><a href="#/" ng-click="setPage('home');">Home</a></li>
+                <li ng-class="{active: page=='about'}"><a href="#/about" ng-click="setPage('about');">About</a></li>
+                <li
+                        ng-class="{active: page=='gallery'}"><a href="#/gallery" ng-click="setPage('gallery');">Pictures
+                </a></li>
+                <li ng-class="{active: page=='motivation'}"><a href="#/motivation" ng-click="setPage('motivation');">
+                    Motivation</a></li>
+                <li
+                        ng-class="{active: page=='contact'}"><a href="#/contact" ng-click="setPage('contact');">Contact
+                </a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="#">Action</a></li>
@@ -88,7 +93,7 @@
 
     </div>
 </nav>
-    
+
 <!-- Root element of PhotoSwipe. Must have class pswp. -->
 <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
     <!-- Background of PhotoSwipe.

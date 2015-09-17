@@ -1,9 +1,11 @@
 var controllers = angular.module('ctrlsModule', []);
 
+//----------------- Home controller -----------------
 controllers.controller('HomeCtrl', ['$scope', function($scope) {
     $scope.started = true;
 }]);
 
+//----------------- Gallery controller -----------------
 controllers.controller('GalleryCtrl', ['$scope', '$document', function($scope, $document) {
     $scope.started = true;
 
@@ -19,4 +21,13 @@ controllers.controller('GalleryCtrl', ['$scope', '$document', function($scope, $
         console.log("Image "+image+" clicked");
     }
 
+}]);
+
+//----------------- Navigation controller -----------------
+controllers.controller('NavCtrl', ['$scope', function($scope) {
+    // default selected page on start up
+    $scope.page = "home";
+    $scope.setPage = function(page) {
+        $scope.page = page;
+    }
 }]);
