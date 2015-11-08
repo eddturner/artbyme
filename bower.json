@@ -1,8 +1,8 @@
 {
-  "name": "angular-seed",
-  "description": "A starter project for AngularJS",
-  "version": "0.0.0",
-  "homepage": "https://github.com/angular/angular-seed",
+  "name": "Art By Me",
+  "description": "A simple project for viewing Edward Turner's flickr artwork",
+  "version": "0.0.1",
+  "homepage": "https://github.com/eddturner/artbyme",
   "license": "MIT",
   "private": true,
   "dependencies": {
@@ -13,6 +13,22 @@
     "jquery-ui": "~1.11",
     "bootstrap": "~3.3.5",
     "jquery-collagePlus": "~0.3.3",
-    "photoswipe": "4.1.0"
+    "photoswipe": "4.1.0",
+    "bootstrap-sass": "~3.3.5",
+    "modernizr": "~2.8.3"
+  },
+  "overrides": {
+  "bootstrap-sass": {
+      "main": [
+        "assets/stylesheets/_bootstrap.scss",
+        "assets/fonts/bootstrap/*",
+        "assets/javascripts/bootstrap.js"
+      ]
+    }
+  },
+  "devDependencies": {
+    "chai": "~3.3.0",
+    "mocha": "~2.3.3"
   }
+
 }
