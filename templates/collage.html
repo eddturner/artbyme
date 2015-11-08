@@ -1,11 +1,4 @@
-<div class="Collage effect-parent">
-    <img ng-repeat="i in srcs" ng-src="{{i.src}}" height="{{i.h}}" width="{{i.w}}" ng-click="galleryItemClick(i);"/>
-</div>
-
-<!-- update collage on window size change -->
-<script type="text/javascript">
-
-    // Here we apply the actual CollagePlus plugin
+<div class="Collage effect-parent"> <img ng-repeat="i in srcs" ng-src={{i.src}} height={{i.h}} width={{i.w}} ng-click="galleryItemClick(i);"> </div> <!-- update collage on window size change --> <script type=text/javascript>// Here we apply the actual CollagePlus plugin
     function collage() {
         $('.Collage').removeWhitespace().collagePlus(
                 {
@@ -22,5 +15,4 @@
         // set a timer to re-apply the plugin
         if (resizeTimer) clearTimeout(resizeTimer);
         resizeTimer = setTimeout(collage, 200);
-    });
-</script>
+    });</script>
