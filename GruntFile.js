@@ -105,7 +105,7 @@ browserSync: {
       ],
       port: 9000,
       server: {
-        baseDir: ['.tmp', config.dist],
+        baseDir: ['.tmp', config.app],
         routes: {
           '/bower_components': './bower_components'
         }
@@ -342,6 +342,10 @@ cssmin: {
   }
 },
 uglify: {
+  options : {
+    beautify : true,
+    mangle   : false
+  },
   dist: {
     files: {
       '<%= config.dist %>/js/scripts.js': [
@@ -351,9 +355,9 @@ uglify: {
     }
   }
 },
-// concat: {
-//   dist: {}
-// },
+concat: {
+  dist: {}
+},
 
 // Copies remaining files to places other tasks can use
 copy: {
